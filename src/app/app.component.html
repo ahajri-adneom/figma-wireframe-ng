@@ -1,15 +1,15 @@
-<main class="container-fluid">
-  <section class="row">
+<main class="ml-3 pt-3">
+  <section>
     <nav class="box mb-3" role="navigation" aria-label="Menu principal">
       <ul class="p-2 d-flex align-items-center">
         <li class="d-flex flex-column align-items-center" *ngFor="let monthData of monthsData"
             (click)="loadContent($event, monthData)">
-          <a href="/#">{{monthData.month}}</a>
+          <a href="/#">{{monthData.month.substr(0,3)}}</a>
           <img alt="indication" class="polygon" [hidden]="selectedMonth?.month !== monthData.month" src="assets/polygon.png">
         </li>
       </ul>
     </nav>
-    <section>
+    <section class="mr-3" id="details-month">
         <article class="box-content d-flex flex-column align-items-center" *ngIf="selectedMonth">
           <header><h1>{{selectedMonth.contentTitle}}</h1></header>
           <footer [innerHTML]="selectedMonth.content"></footer>
