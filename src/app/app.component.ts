@@ -16,9 +16,9 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    window.scrollTo(0, 0);
     this.monthsData = this.appService.getData();
     this.selectedMonth = this.monthsData[0];
+    setTimeout(()=>{ window.scrollTo(0, 0)}, 300);
   }
 
   loadContent($event: any, month: TabsI) {
