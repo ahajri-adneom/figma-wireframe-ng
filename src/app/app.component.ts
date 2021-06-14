@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   monthsData: TabsI[] = [];
   selectedMonth:TabsI|null = null;
 
-  constructor(private appService: AppService, private window: Window) {
+  constructor(private appService: AppService) {
   }
 
   ngOnInit() {
@@ -22,7 +22,6 @@ export class AppComponent implements OnInit{
   }
 
   loadContent($event: any, month: TabsI) {
-    console.log($event);
     this.selectedMonth = month;
     window.scrollTo($event.target.offsetLeft - 172, 0);
     return false;
