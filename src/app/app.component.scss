@@ -29,9 +29,18 @@ nav ul li{
     top: 3.5em;
 }
 
-main {
+main section section {
   position: fixed;
   -webkit-backface-visibility: hidden;
   top: 152px;
+
+  article {
+    header {
+      text-align: center;
+    }
+    footer {
+      text-align: justify;
+    }
+  }
 }
 

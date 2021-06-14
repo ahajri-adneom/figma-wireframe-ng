@@ -1,21 +1,21 @@
-<div class="container-fluid">
-  <div class="row">
+<main class="container-fluid">
+  <section class="row">
     <nav class="box mb-3" role="navigation" aria-label="Menu principal">
       <ul class="p-2 d-flex align-items-center">
         <li class="d-flex flex-column align-items-center" *ngFor="let monthData of monthsData"
             (click)="loadContent($event, monthData)">
-          <a href="#">{{monthData.month}}</a>
-          <img class="polygon" [hidden]="selectedMonth?.month !== monthData.month" src="assets/polygon.png">
+          <a href="/#">{{monthData.month}}</a>
+          <img alt="indication" class="polygon" [hidden]="selectedMonth?.month !== monthData.month" src="assets/polygon.png">
         </li>
       </ul>
     </nav>
-    <main role="main">
-      <div class="box-content d-flex flex-column align-items-center" *ngIf="selectedMonth">
-        <h1>{{selectedMonth.contentTitle}}</h1>
-        <div class="mt-3" [innerHTML]="selectedMonth.content"></div>
-      </div>
-    </main>
-  </div>
-</div>
+    <section>
+        <article class="box-content d-flex flex-column align-items-center" *ngIf="selectedMonth">
+          <header><h1>{{selectedMonth.contentTitle}}</h1></header>
+          <footer [innerHTML]="selectedMonth.content"></footer>
+        </article>
+    </section>
+  </section>
+</main>
 
 
